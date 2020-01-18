@@ -1,3 +1,4 @@
+import { defaultText } from './../cm-phaser-library/src/objects/textStyles';
 export default class MainScene extends Phaser.Scene {
   fpsText: Phaser.GameObjects.Text
 
@@ -6,7 +7,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   create() {
-    this.add.text(800, 600, 'hello').setOrigin(.5);
+    this.add.text(800, 600, 'hello', defaultText).setOrigin(.5);
   }
 
   update() {
