@@ -1,6 +1,6 @@
 import { defaultText } from './../cm-phaser-library/src/objects/textStyles';
+
 export default class MainScene extends Phaser.Scene {
-  fpsText: Phaser.GameObjects.Text
 
   constructor() {
     super({ key: 'MainScene' })
