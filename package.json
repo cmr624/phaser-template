@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack/webpack.dev.js",
-    "build": "webpack --config webpack/webpack.prod.js"
+    "build": "webpack --config webpack/webpack.prod.js",
+    "preload":"tsc ./src/utils/preload.ts && node ./src/utils/preload.js"
   },
   "engines": {
     "node": ">=8.0.0"
