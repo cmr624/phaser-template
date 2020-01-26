@@ -16,9 +16,29 @@ var walkSync = function(dir, filelist) {
 };
 
 let arr = [];
-walkSync('./src/assets', arr)
-createPreloadScene(arr);
+walkSync('./src/assets', arr);
+arr = arr.filter((e : string) => e.search('.png') !== -1);
 
+console.log(`found ${arr.length} keys in the assets folder.`);
+//console.log(arr);
+//createPreloadScene(arr);
+let obj = createObjectConstant(arr);
+let content = `export const PRELOADED_KEYS = ${JSON.stringify(obj)}`;
+var fs = require('fs');
+fs.writeFile(__dirname + '/dist/preloadedKeyObject.ts', content, () => console.warn(`still not fully tested. exporting constant into file in ${__dirname + '/dist'}`));
+
+
+function createObjectConstant(arr) {
+  let obj = {};
+  arr.forEach(element => {
+    let preloadedObject = {};
+    let key = element.replace('.png', '').slice(element.lastIndexOf('/') + 1);
+    preloadedObject['key'] = key;
+    preloadedObject['path'] = element;
+    obj[key.toUpperCase()] = preloadedObject;
+  });
+  return obj;
+}
 
 
 function createPreloadScene(arr) {
