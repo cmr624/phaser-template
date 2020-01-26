@@ -1,5 +1,19 @@
+main();
+function main() {
+
+  let arr = [];
+  walkSync('./src/assets', arr);
+  arr = arr.filter((e : string) => e.search('.png') !== -1);
+
+  console.log(`found ${arr.length} keys in the assets folder.`);
+
+  let obj = createObjectConstant(arr);
+  let content = `let PRELOADED_KEYS = ${JSON.stringify(obj)};\nexport { PRELOADED_KEYS }`;
+  const fs = require('fs');
+  fs.writeFile(__dirname + '/dist/preloadedKeyObject.ts', content, () => console.warn(`still not fully tested. exporting constant only into file in ${__dirname + '/dist'}`));
+}
 // List all files in a directory in Node.js recursively in a synchronous fashion
-var walkSync = function(dir, filelist) {
+export function walkSync(dir, filelist) {
   var path = path || require('path');
   var fs = fs || require('fs'),
       files = fs.readdirSync(dir);
@@ -14,19 +28,6 @@ var walkSync = function(dir, filelist) {
   });
   return filelist;
 };
-
-let arr = [];
-walkSync('./src/assets', arr);
-arr = arr.filter((e : string) => e.search('.png') !== -1);
-
-console.log(`found ${arr.length} keys in the assets folder.`);
-//console.log(arr);
-//createPreloadScene(arr);
-let obj = createObjectConstant(arr);
-let content = `export const PRELOADED_KEYS = ${JSON.stringify(obj)}`;
-var fs = require('fs');
-fs.writeFile(__dirname + '/dist/preloadedKeyObject.ts', content, () => console.warn(`still not fully tested. exporting constant into file in ${__dirname + '/dist'}`));
-
 
 function createObjectConstant(arr) {
   let obj = {};
