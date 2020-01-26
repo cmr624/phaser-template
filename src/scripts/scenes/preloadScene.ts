@@ -6,7 +6,7 @@ export default class PreloadScene extends Phaser.Scene {
   }
   preload() {
     Object.keys(PRELOADED_KEYS).forEach((e) => {
-      this.load.image(e['key'], e['path']);
+      this.load.image(PRELOADED_KEYS[e]['key'], PRELOADED_KEYS[e]['path']);
     })
   }
   create() {
