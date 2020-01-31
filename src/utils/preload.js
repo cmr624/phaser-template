@@ -34,6 +34,7 @@ function createObjectConstant(arr) {
         var preloadedObject = {};
         var key = element.replace('.png', '').slice(element.lastIndexOf('/') + 1);
         preloadedObject['key'] = key;
+        element = element.replace('src', '');
         preloadedObject['path'] = element;
         obj[key.toUpperCase()] = preloadedObject;
     });
