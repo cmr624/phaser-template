@@ -2,7 +2,7 @@
 
 ## Features
 
-From Yandeu - Typescript, Scaffold, Webpack configuration, etc.
+From Yandeu - Typescript, scaffold, Webpack configuration, etc.
 
 ### Library Submodule
 
@@ -20,7 +20,7 @@ We can then use this to load all our assets in game much easier.
 
 #### Notes
 
-Right now, only supports pngs, and hasn't been fully developed for all types of assets.
+Right now only supports pngs, and hasn't been fully developed for all types of assets.
 
 #### TODO
 
