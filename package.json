@@ -6,7 +6,7 @@
     "start": "webpack-dev-server --config webpack/webpack.dev.js",
     "build": "webpack --config webpack/webpack.prod.js",
     "preload": "tsc ./src/utils/preload.ts && node ./src/utils/preload.js",
-    "postinstall": "git submodule init && git submodule update"
+    "postinstall": "git submodule init && git submodule update && cd ./src/scripts/cm-phaser-library && git checkout master"
   },
   "engines": {
     "node": ">=8.0.0"
