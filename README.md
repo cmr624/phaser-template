@@ -1,5 +1,11 @@
 # Phaser Typescript Template
 
+# Install
+
+`git clone https://github.com/cmr624/phaser-template.git`
+`cd phaser-template`
+`npm i`
+
 ## Features
 
 From Yandeu - Typescript, scaffold, Webpack configuration, etc.
