@@ -2,9 +2,11 @@
 
 # Install
 
-`git clone https://github.com/cmr624/phaser-template.git`
-`cd phaser-template`
-`npm i`
+1. `git clone https://github.com/cmr624/phaser-template.git`
+
+2. `cd phaser-template`
+
+3. `npm i` (this also runs `postinstall` which inits the submodule)
 
 ## Features
 
