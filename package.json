@@ -26,6 +26,7 @@
     "workbox-webpack-plugin": "^4.3.1"
   },
   "dependencies": {
+    "cm-phaser-library": "0.0.5",
     "phaser": "^3.21.0"
   }
 }
